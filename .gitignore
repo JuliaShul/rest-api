@@ -1,0 +1,10 @@
+# Allure
+.allure
+
+# Idea
+.idea
+*.iml
+
+# Gradle
+.gradle
+build
