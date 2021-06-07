@@ -1,14 +1,11 @@
-package io.github.eroshenkoam.allure;
+package qaguru.allure;
 
 import io.qameta.allure.Allure;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.OutputType;
-
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.util.stream.IntStream;
 
-import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.screenshot;
 
 public class AttachmentsTest {
@@ -22,8 +19,11 @@ public class AttachmentsTest {
     }
 
     @Test
-    public void testAttachmentDynamic() {
-        open("https://github.com");
+    public void testBasicSteps() {
+        steps.searchForRepository("allure");
+        steps.goToRepository("allure-framework/allure2");
+        steps.openIssueTab();
+        steps.shouldSeeIssueWithNumber(1303);
         makeScreenshot();
     }
 

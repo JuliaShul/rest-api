@@ -1,4 +1,4 @@
-package io.github.eroshenkoam.allure;
+package qaguru.allure;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Attachment;
@@ -20,10 +20,7 @@ public class WebSteps {
 
     @Step("Ищем репозиторий {repository}")
     public void searchForRepository(String repository) {
-        $(".header-search-input").click();
-        $(".header-search-input").sendKeys(repository);
-        $(".header-search-input").submit();
-    }
+        $(".header-search-input").setValue(repository).submit(); }
 
     @Step("Переходим в репозиторий {repository}")
     public void goToRepository(String repository) {

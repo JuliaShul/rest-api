@@ -1,4 +1,4 @@
-package io.github.eroshenkoam.allure;
+package qaguru.allure;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -14,8 +14,8 @@ import static io.qameta.allure.Allure.step;
 public class SelenideTest {
 
     private static final String BASE_URL = "https://github.com";
-    private static final String REPOSITORY = "eroshenkoam/allure-example";
-    private static final int ISSUE_NUMBER = 68;
+    private static final String REPOSITORY = "allure";
+    private static final int ISSUE_NUMBER = 1303;
 
     @Test
     public void testIssueSearch() {
@@ -23,10 +23,9 @@ public class SelenideTest {
 
         open(BASE_URL);
         $(".header-search-input").click();
-        $(".header-search-input").sendKeys(REPOSITORY);
-        $(".header-search-input").submit();
-        $(By.linkText("eroshenkoam/allure-example")).click();
-        $(withText("Isues")).click();
+        $(".header-search-input").setValue(REPOSITORY).submit();
+        $(By.linkText("allure-framework/allure2")).click();
+        $(withText("Issues")).click();
         $(withText("#" + ISSUE_NUMBER)).should(Condition.exist);
     }
 

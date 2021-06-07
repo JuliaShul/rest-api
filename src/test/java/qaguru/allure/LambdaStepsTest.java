@@ -1,4 +1,4 @@
-package io.github.eroshenkoam.allure;
+package qaguru.allure;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Allure;
@@ -13,8 +13,8 @@ import static io.qameta.allure.Allure.step;
 public class LambdaStepsTest {
 
     private static final String BASE_URL = "https://github.com";
-    private static final String REPOSITORY = "eroshenkoam/allure-example";
-    private static final int ISSUE_NUMBER = 68;
+    private static final String REPOSITORY = "allure";
+    private static final int ISSUE_NUMBER = 1303;
 
     @Test
     public void testIssueSearch() {
@@ -24,20 +24,17 @@ public class LambdaStepsTest {
         });
         step("Ищем репозиторий " + REPOSITORY, (s) -> {
             s.parameter("repository", REPOSITORY);
-            $(".header-search-input").click();
-            $(".header-search-input").sendKeys(REPOSITORY);
-            $(".header-search-input").submit();
+            $(".header-search-input").setValue(REPOSITORY).submit();
         });
-        step("Переходим в репозиторий " + REPOSITORY, (s) -> {
-            s.parameter("repository", REPOSITORY);
-            $(By.linkText("eroshenkoam/allure-example")).click();
+        step("Переходим в репозиторий allure-framework/allure2", () -> {
+            $(By.linkText("allure-framework/allure2")).click();
         });
         step("Открываем таб Issues в репозитории", () -> {
             $(withText("Issues")).click();
         });
         step("Проверяем что Issue c номером " + ISSUE_NUMBER + " существует", (s) -> {
             s.parameter("number", ISSUE_NUMBER);
-            $(withText("#68")).should(Condition.exist);
+            $(withText("#1303")).should(Condition.exist);
         });
     }
 
