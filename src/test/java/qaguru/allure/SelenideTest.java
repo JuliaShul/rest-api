@@ -22,6 +22,7 @@ public class SelenideTest {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         open(BASE_URL);
+
         $(".header-search-input").click();
         $(".header-search-input").setValue(REPOSITORY).submit();
         $(By.linkText("allure-framework/allure2")).click();
