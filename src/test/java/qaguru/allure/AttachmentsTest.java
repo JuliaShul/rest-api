@@ -17,6 +17,7 @@ public class AttachmentsTest {
     @Test
     public void testAttachmentAnnotation() {
         steps.openMainPage();
+
         steps.makeScreenshot();
     }
 
