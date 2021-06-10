@@ -1,7 +1,6 @@
 package qaguru.allure;
 
 import com.codeborne.selenide.Condition;
-import io.qameta.allure.Allure;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -14,7 +13,7 @@ public class LambdaStepsTest {
 
     private static final String BASE_URL = "https://github.com";
     private static final String REPOSITORY = "allure";
-    private static final int ISSUE_NUMBER = 1303;
+    private static final int ISSUE_NUMBER = 1304;
 
     @Test
     public void testIssueSearch() {
