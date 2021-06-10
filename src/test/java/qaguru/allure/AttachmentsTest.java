@@ -11,6 +11,8 @@ import static com.codeborne.selenide.Selenide.screenshot;
 public class AttachmentsTest {
 
     private WebSteps steps = new WebSteps();
+    private static final String REPOSITORY = "allure";
+    private static final String FIND_REPOSITORY = "allure-framework/allure2";
 
     @Test
     public void testAttachmentAnnotation() {
@@ -20,8 +22,8 @@ public class AttachmentsTest {
 
     @Test
     public void testBasicSteps() {
-        steps.searchForRepository("allure");
-        steps.goToRepository("allure-framework/allure2");
+        steps.searchForRepository(REPOSITORY);
+        steps.goToRepository(FIND_REPOSITORY);
         steps.openIssueTab();
         steps.shouldSeeIssueWithNumber(1303);
         makeScreenshot();
