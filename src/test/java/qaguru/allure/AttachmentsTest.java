@@ -1,6 +1,7 @@
 package qaguru.allure;
 
 import io.qameta.allure.Allure;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.OutputType;
 import java.io.ByteArrayInputStream;
@@ -12,14 +13,18 @@ public class AttachmentsTest {
 
     private WebSteps steps = new WebSteps();
 
-    @Test
-    public void testAttachmentAnnotation() {
+    @BeforeEach
+    void openGitHub() {
         steps.openMainPage();
+    }
+
+    @Test
+    void testAttachmentAnnotation() {
         steps.makeScreenshot();
     }
 
     @Test
-    public void testBasicSteps() {
+    void testBasicSteps() {
         steps.searchForRepository("allure");
         steps.goToRepository("allure-framework/allure2");
         steps.openIssueTab();

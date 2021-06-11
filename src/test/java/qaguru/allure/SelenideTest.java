@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static io.qameta.allure.Allure.step;
+
 
 public class SelenideTest {
 
@@ -18,7 +18,7 @@ public class SelenideTest {
     private static final int ISSUE_NUMBER = 1303;
 
     @Test
-    public void testIssueSearch() {
+    void testIssueSearch() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         open(BASE_URL);

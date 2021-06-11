@@ -1,7 +1,6 @@
 package qaguru.allure;
 
 import com.codeborne.selenide.Condition;
-import io.qameta.allure.Allure;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -17,7 +16,7 @@ public class LambdaStepsTest {
     private static final int ISSUE_NUMBER = 1303;
 
     @Test
-    public void testIssueSearch() {
+    void testIssueSearch() {
         step("Открываем главную старницу", (s) -> {
             s.parameter("Урл", BASE_URL);
             open(BASE_URL);
