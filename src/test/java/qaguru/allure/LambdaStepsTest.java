@@ -14,6 +14,7 @@ public class LambdaStepsTest {
 
     private static final String BASE_URL = "https://github.com";
     private static final String REPOSITORY = "allure";
+
     private static final int ISSUE_NUMBER = 1303;
 
     @Test
