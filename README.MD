@@ -1,15 +1,11 @@
 
 ### How to run with terminal commands
-For web config
+For 17 task
 ```bash
-gradle clean test -Dstage=docker --tests WebDriverTest 
+gradle clean test --tests restAssuredTest 
 
 ```
-or
+For 16 task
 ```bash
-gradle clean test -Dstage=local --tests WebDriverTest 
-```
-or
-```bash
-gradle clean test -Dstage=remote --tests WebDriverTest 
+gradle clean test --tests RestApiTest 
 ```
