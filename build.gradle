@@ -19,9 +19,7 @@ repositories {
 dependencies {
     testImplementation(
             'org.junit.jupiter:junit-jupiter-api:5.6.0',
-            'io.qameta.allure:allure-selenide:2.14.0',
-            'com.codeborne:selenide:5.20.1',
-            'org.aeonbits.owner:owner:1.0.12',
+            "io.rest-assured:rest-assured:4.3.1",
             'org.assertj:assertj-core:3.20.2'
 
     )
