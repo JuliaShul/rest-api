@@ -1,11 +1,11 @@
+package qaguru.restapi;
 
-import io.restassured.response.Response;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 
+import static io.restassured.RestAssured.*;
 import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.core.Is.is;
-import static io.restassured.RestAssured.*;
 
 public class RestApiTest {
 
